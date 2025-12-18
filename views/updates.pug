@@ -1,0 +1,15 @@
+doctype html
+html
+  head
+    title= title
+  body
+    h1 Add a new pet
+
+    a(href="/") Return to the homepage
+
+    form(action="/update-cobj" method="POST")
+      each prop in properties
+        div
+          label(for=prop.name) #{prop.label}:
+          input(type="text" name=prop.name id=prop.name required)
+      button(type="submit") Save
